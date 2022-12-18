@@ -52,6 +52,7 @@ t2=teacher("sti","ahmed",41)
 #--------------------------students list-----------------------------
 s1=student("001","rayen",17,(t1,t2))
 s1.add_email("rayenbenyoussef355@gmail.com")
+s1.add_phoneN(93071355)
 
 #-------------------------------show---------------------------------
 print(f"student id: {s1.id} \nstudent name: {s1.name} \nstudent age: {s1.age} \nstudent email: {s1.email}\nstudent phone number: {s1.phoneN} \nstudent adress: {s1.adress} \nstudent teachers: {s1.show_teachers()} ")
