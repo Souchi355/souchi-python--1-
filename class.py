@@ -1,9 +1,11 @@
 #--------------------------class subjects--------------------------
 class subjects:
+    instance_count = 0
     def __init__(self,subject,hours,students=None):
         self.subject=subject
         self.hours=hours
         self.students=students
+        subjects.instance_count += 1
         
 
 #--------------------------class teachers--------------------------
