@@ -56,21 +56,19 @@ class student:
     def show_student(self):
         print(f'''
             + student id: {self.id} 
-            student name: {self.name} 
-            student age:{self.age} 
-            student email: {self.email}
-            student phone number: {self.phoneN} 
-            student adress: {self.adress} 
-            student teachers: {self.show_teachers()}'''
+                student name: {self.name} 
+                student age:{self.age} 
+                student email: {self.email}
+                student phone number: {self.phoneN} 
+                student adress: {self.adress} 
+                student teachers: {self.show_teachers()}'''
             )
 
 #----------------------------function--------------------------------
 def add_students(n,info=4):
     global students_list
-    
     while info<4:
-        info+=1
-        
+        info+=1    
     p=len(students_list)+1
     for i in range(1,n+1):
         students_list.update({"s"+str(p):None})
