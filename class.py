@@ -65,24 +65,24 @@ class student:
             )
 
 #----------------------------function--------------------------------
-def add_students(n,info=4):
-    global students_list
+#def add_students(n,info=4):
+#    global students_list
     
-    while info<4:
-        info+=1
+#    while info<4:
+#        info+=1
         
-    p=len(students_list)+1
-    for i in range(1,n+1):
-        students_list.update({"s"+str(p):None})
-        print("student",p)
-        id=input("id: ")
-        name=input("name: ")
-        age=int(input("age: "))
-        teachers=tuple(input("teacher from teachers_list: "))
-        students_list["s"+str(p)]=student(id,name,age,teachers)
-        p+=1
+#    p=len(students_list)+1
+#    for i in range(1,n+1):
+#        students_list.update({"s"+str(p):None})
+#        print("student",p)
+#        id=input("id: ")
+#        name=input("name: ")
+#        age=int(input("age: "))
+#        teachers=tuple(input("teacher from teachers_list: "))
+#        students_list["s"+str(p)]=student(id,name,age,teachers)
+#        p+=1
         
-    return students_list
+#    return students_list
 
 #--------------------------subjects list-----------------------------
 subjects_list={
