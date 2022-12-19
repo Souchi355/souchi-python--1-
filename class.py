@@ -1,12 +1,9 @@
 #--------------------------class subjects--------------------------
-class subjects:
-    instance_count = 0
+class subject:
     def __init__(self,subject,hours,students=None):
         self.subject=subject
         self.hours=hours
         self.students=students
-        subjects.instance_count += 1
-        
 
 #--------------------------class teachers--------------------------
 class teacher:
@@ -55,22 +52,69 @@ class student:
             return self.teachers.name
     def teacher_subject(self):
         return self.teachers.subject
+    
+    def show_student(self):
+        print(f'''
+            + student id: {self.id} 
+            student name: {self.name} 
+            student age:{self.age} 
+            student email: {self.email}
+            student phone number: {self.phoneN} 
+            student adress: {self.adress} 
+            student teachers: {self.show_teachers()}'''
+            )
+
+#----------------------------function--------------------------------
+def add_students(n,info=4):
+    global students_list
+    
+    while info<4:
+        info+=1
+        
+    p=len(students_list)+1
+    for i in range(1,n+1):
+        students_list.update({"s"+str(p):None})
+        print("student",p)
+        id=input("id: ")
+        name=input("name: ")
+        age=int(input("age: "))
+        teachers=tuple(input("teacher from teachers_list: "))
+        students_list["s"+str(p)]=student(id,name,age,teachers)
+        p+=1
+        
+    return students_list
 
 #--------------------------subjects list-----------------------------
-math=subjects("math",5)
-sti=subjects("sti",4)
+subjects_list={
+    "math":subject("math",5),
+    "sti":subject("sti",4),
+    "phy":subject("phy",5)
+}
 
 #--------------------------teachers list-----------------------------
-t1=teacher(math,"adnan",40)
-t2=teacher(sti,"ahmed",41)
+teachers_list={
+    "t1":teacher(subjects_list["math"],"adnan",40),
+    "t2":teacher(subjects_list["sti"],"ahmed",41),
+    "t3":teacher(subjects_list["math"],"hedi",42),
+    "t4":teacher(subjects_list["phy"],"sousou",120)
+}
 
 #--------------------------students list-----------------------------
-s1=student("001","rayen",17,(t1,t2))
-s1.add_email("rayenbenyoussef355@gmail.com")
-s1.add_phoneN(93071355)
+students_list={
+    "s1":student("001","rayen",17,(teachers_list["t1"],teachers_list["t2"],teachers_list["t4"])),
+    "s2":student("002","ela",17,(teachers_list["t1"],teachers_list["t2"],teachers_list["t4"])),
+    "s3":student("003","omar",18,(teachers_list["t3"]))
+}
 
-s2=student("002","ela",17,(t1,t2))
-s2.add_adress("gharelmelh")
+students_list["s1"].add_email("rayenbenyoussef355@gmail.com")
+students_list["s1"].add_phoneN(93071355)
+
+students_list["s2"].add_adress("gharelmelh")
+
+
 #-------------------------------show---------------------------------
-print(f"student id: {s1.id} \nstudent name: {s1.name} \nstudent age: {s1.age} \nstudent email: {s1.email}\nstudent phone number: {s1.phoneN} \nstudent adress: {s1.adress} \nstudent teachers: {s1.show_teachers()} ")
-print(f"student id: {s2.id} \nstudent name: {s2.name} \nstudent age: {s2.age} \nstudent email: {s2.email}\nstudent phone number: {s2.phoneN} \nstudent adress: {s2.adress} \nstudent teachers: {s2.show_teachers()} ")
+students_list["s1"].show_student()
+students_list["s2"].show_student()
+students_list["s3"].show_student()
+students_list=add_students(1)
+print(students_list)
