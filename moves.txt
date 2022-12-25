@@ -1,0 +1,26 @@
+[Event "Live Chess"]
+[Site "Chess.com"]
+[Date "2022.12.23"]
+[Round "-"]
+[White "Lorenzo2996510"]
+[Black "Souchi355"]
+[Result "1-0"]
+[CurrentPosition "5k2/5Qb1/8/8/2B5/4P3/PPPP2PP/RNBK2NR b - -"]
+[Timezone "UTC"]
+[ECO "C20"]
+[ECOUrl "https://www.chess.com/openings/Kings-Pawn-Opening-Wayward-Queen-Attack"]
+[UTCDate "2022.12.23"]
+[UTCTime "10:46:37"]
+[WhiteElo "410"]
+[BlackElo "269"]
+[TimeControl "60"]
+[Termination "Lorenzo2996510 won by checkmate"]
+[StartTime "10:46:37"]
+[EndDate "2022.12.23"]
+[EndTime "10:48:04"]
+[Link "https://www.chess.com/game/live/65531509167"]
+
+1. e4 e5 2. Qh5 c6 3. Qxe5+ Qe7 4. Qxg7 d6 5. Qxh8 Qxe4+ 6. Kd1 d5 7. Qxg8 Qe3
+8. Qxh7 b5 9. fxe3 c5 10. Qf5 Bg7 11. Qxd5 Be6 12. Qxc5 Nc6 13. Qxb5 a5 14.
+Qxc6+ Ke7 15. Qxa8 Bd5 16. Qxa5 Kf6 17. Qxd5 Kg6 18. Bd3+ Kf6 19. Qf5+ Ke7 20.
+Bc4 Kf8 21. Qxf7# 1-0
