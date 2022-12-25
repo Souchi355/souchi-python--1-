@@ -1,4 +1,4 @@
-
+import pandas as pd
 class chess:
     def __init__(self,moves):
         self.moves=moves
@@ -39,6 +39,11 @@ class chess:
                 listm[i][1]=listm[i][1],None
 
         return listm
+    
+    def show(self,moves):
+        for i in range(1,len(moves)+1):
+            print(moves[i])
+            print()
 
 
 file=open("moves.txt","r")
@@ -47,4 +52,5 @@ for line in file:
     moves=moves+line
 moves=moves[moves.find("1. "):moves.find("#")+1]
 chs=chess(moves)
-print(chs.splt(chs.moves))
+chs.show(chs.splt(chs.moves))
+
