@@ -1,5 +1,7 @@
 import pandas as pd
-class chess:
+import numpy as np
+
+class game:
     def __init__(self,moves):
         self.moves=moves
 
@@ -45,12 +47,47 @@ class chess:
             print(moves[i])
             print()
 
+    def board(self,idxn=[1,2,3,4,5,6,7,8],idxl=["A","B","C","D","E","F","G","H"]):
+        global pos
+        i=0
+        fileb="board.xlsx"
+        board=pd.read_excel(fileb,index_col="NL")
+        for n in idxn:
+            for l in idxl:
+                pos.append(board.loc[n,l][3:])
+                i+=1
+                board.loc[n,l]=board.loc[n,l][0:2]
+        pos=np.array(pos)
+        print(board)
+    
+    def coccect_moves(self,moves):
+        for i in range(1,len(moves)+1):
+            for j in range(2):
+                if len(moves[i][j][0])==2:
+                    if j==0:
+                        listt=list(moves[i][j])[0]="wp"+moves[i][j][0],None
+                    else:
+                        listt=list(moves[i][j])[0]="bp"+moves[i][j][0],None
+                    moves[i][j]=listt
+        return moves
+
+
+
 
 file=open("moves.txt","r")
 moves=""
+pos=[]
+
 for line in file:
     moves=moves+line
 moves=moves[moves.find("1. "):moves.find("#")+1]
-chs=chess(moves)
-chs.show(chs.splt(chs.moves))
+game1=game(moves)
+game1.moves=game1.splt(game1.moves)
+game1.moves=game1.coccect_moves(game1.moves)
+game1.show(game1.moves)
+game1.board()
+pos=pos.reshape(8,8)
+pos=np.flip(pos,axis=0)
+print("--------------------------------------------------------------------------")
+print(pos)
 
